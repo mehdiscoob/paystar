@@ -1,0 +1,7 @@
+{
+    "Subscription": true,
+    "Core": true,
+    "Products": true,
+    "Payment": true,
+    "Orders": true
+}
