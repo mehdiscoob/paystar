@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:api')->prefix('product')->group(function () {
+    Route::get('/all',[\App\Http\Controllers\Product\ProductController::class,'getAllProduct']);
 });
+Route::middleware('auth:api')->prefix('order')->group(function () {
+    Route::post('/create',[\App\Http\Controllers\Order\OrderController::class,'createOrder']);
+
+});
+

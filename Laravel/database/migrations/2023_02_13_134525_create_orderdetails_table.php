@@ -10,6 +10,7 @@ class CreateOrderdetailsTable extends Migration {
 		Schema::create('orderdetails', function(Blueprint $table) {
             $table->id();
 			$table->integer('count')->default(1);
+			$table->decimal('total',10,2)->default(0);
             $table->unsignedBigInteger('order_id')->index();
             $table->unsignedBigInteger('product_id')->index();
             $table->timestamps();
